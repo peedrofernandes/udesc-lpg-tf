@@ -115,8 +115,6 @@ void createEvent(int *qtdEventos, Evento **evs, FILE *lista) {
     (*evs)[(*qtdEventos) - 1] = e;
     
     sortEvents(*evs, (*qtdEventos));
-    
-    fwrite(&e, sizeof(Evento), 1, lista);
 
     clearScreen();
     printf("Evento registrado com sucesso!\n");
@@ -220,7 +218,7 @@ void printFiveNextEvents(int qtd, Evento *eventos) {
     int dToday = dateSize(dia, mes, ano, hora) - hora; // Hoje: 17726004!
     if (d1 >= dToday) {
 
-      rest = qtd - 1 - i;
+      rest = qtd - i;
 
       if (rest > 5)
         rest = 5;
@@ -319,6 +317,14 @@ void removeEvent(int *qtd, Evento **eventos) {
   clearBuffer();
   printf("Evento excluido com sucesso!\n\n");
   systemPause();
+}
+
+void writeEvents(Evento *eventos, int qtdEventos, FILE *lista) {
+  int i;
+
+  for (i = 0; i < qtdEventos; i++) {
+    fwrite(&eventos[i], sizeof(Evento), 1, lista);
+  }
 }
 
 #endif

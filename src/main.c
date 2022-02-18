@@ -31,6 +31,8 @@ int main()
     }
   } // Preencher o vetor local, utilizando o arquivo!
 
+  fclose(lista);
+
   sortEvents(eventos, qtdEventos);
 
   do {
@@ -67,6 +69,10 @@ int main()
     }
 
   } while (op != 0);
+
+  lista = fopen("lista.bin", "wb");
+
+  writeEvents(eventos, qtdEventos, lista);
 
   free(eventos);
   fclose(lista);

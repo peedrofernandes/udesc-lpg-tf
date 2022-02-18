@@ -69,7 +69,7 @@ void printSingleEvent(Evento e, int i) {
 int validateDate(int day, int month, int year) {
   int maxDay;
 
-  if (month < 1 || month > 12 || year < 0 || day < 0)
+  if (month < 1 || month > 12 || year < 0 || day < 1)
     return 0;
 
   if (month == 1 || month == 3 || month == 5 || month == 7 || month == 8 || month == 10 || month == 12) {
