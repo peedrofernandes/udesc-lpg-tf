@@ -46,7 +46,7 @@ int main()
       printf("Saindo. Ate mais!\n");
       break;
     case 1: // Criar um evento novo
-      createEvent(&qtdEventos, &eventos, lista);
+      createEvent(&qtdEventos, &eventos);
       break;
     case 2: // Mostrar todos os eventos
       printAllEvents(qtdEventos, eventos);
@@ -57,7 +57,7 @@ int main()
     case 4: // Mostrar os cinco proximos eventos a partir da data atual
       printFiveNextEvents(qtdEventos, eventos);
       break;
-    case 5:
+    case 5: // Remover algum evento de acordo com a data e hora inicial
       removeEvent(&qtdEventos, &eventos);
       break;
     default:

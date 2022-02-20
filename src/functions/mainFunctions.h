@@ -27,7 +27,7 @@ int showMenu() {
   return op;
 }
 
-void createEvent(int *qtdEventos, Evento **evs, FILE *lista) {
+void createEvent(int *qtdEventos, Evento **evs) {
     clearScreen();
     clearBuffer();
 
